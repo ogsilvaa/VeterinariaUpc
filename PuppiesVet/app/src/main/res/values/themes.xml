@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PuppiesVet" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme.PuppiesVet" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_principal</item>
         <item name="colorPrimaryVariant">#424243</item>
