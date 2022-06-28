@@ -69,9 +69,7 @@
                 android:layout_weight="1"
                 android:layout_marginHorizontal="8dp"/>
 
-
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 
