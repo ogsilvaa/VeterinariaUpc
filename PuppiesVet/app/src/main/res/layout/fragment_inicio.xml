@@ -39,6 +39,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_BienvenidaInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="12dp"
@@ -49,6 +50,7 @@
                     android:textSize="18sp"></TextView>
 
                 <TextView
+                    android:id="@+id/tv_PreguntaAccionHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
@@ -60,12 +62,12 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/iv_FotoUsuarioHeader"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/perfilsinfoto"
                 android:layout_weight="1"
-                android:layout_marginRight="8dp"/>
+                android:layout_marginHorizontal="8dp"/>
 
 
         </LinearLayout>
