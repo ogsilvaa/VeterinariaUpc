@@ -1,4 +1,4 @@
-package com.upc.puppiesvet;
+package com.upc.puppiesvet.ui.perfil;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.upc.puppiesvet.R;
 
 
 public class PerfilFragment extends Fragment {
