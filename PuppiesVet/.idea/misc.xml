@@ -5,10 +5,12 @@
       <map>
         <entry key="..\:/Users/alons/AndroidStudioProjects/PuppiesVet/app/src/main/res/drawable/fondo_boton.xml" value="0.25" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/PuppiesVet/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/drawable/fondo_boton.xml" value="0.387" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_inicio.xml" value="0.275" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_bienvenida.xml" value="0.25" />
-        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_inicio.xml" value="0.33" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_bienvenida.xml" value="0.1" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_header.xml" value="0.22" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_inicio.xml" value="0.1" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_perfil.xml" value="0.38333333333333336" />
       </map>

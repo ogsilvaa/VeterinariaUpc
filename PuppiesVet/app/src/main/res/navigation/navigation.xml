@@ -14,6 +14,7 @@
             android:id="@+id/action_bienvenidaFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.upc.puppiesvet.ui.login.LoginFragment"
@@ -23,19 +24,22 @@
             android:id="@+id/action_loginFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.upc.puppiesvet.ui.perfil.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" >
+    </fragment>
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.upc.puppiesvet.InicioFragment"
+        android:name="com.upc.puppiesvet.ui.navheader.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
             android:id="@+id/action_inicioFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/perfilFragment"
-        android:name="com.upc.puppiesvet.ui.perfil.PerfilFragment"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+
 
 </navigation>
