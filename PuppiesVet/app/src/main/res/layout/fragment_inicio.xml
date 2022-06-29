@@ -24,17 +24,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/roboto_bold"
             android:background="@drawable/fondo_boton"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Solicitar servicios"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:text="Solicitar servicios"
-            android:layout_marginStart="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
 
-        />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_Perfil"
