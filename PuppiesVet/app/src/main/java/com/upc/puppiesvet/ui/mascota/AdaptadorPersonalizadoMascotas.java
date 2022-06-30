@@ -1,5 +1,6 @@
 package com.upc.puppiesvet.ui.mascota;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -7,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<AdaptadorPersonalizadoMascotas.MyViewHolder> {
+
+
     @NonNull
     @Override
     public AdaptadorPersonalizadoMascotas.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
