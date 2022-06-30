@@ -66,4 +66,23 @@ public class EntidadPerfil {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public EntidadPerfil(String id, String nombres, String apellidos, String correo, String celular, String direccion, String password) {
+        this.id = id;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.password = password;
+    }
+
+    public EntidadPerfil(String nombres, String apellidos, String correo, String celular, String direccion, String password) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.password = password;
+    }
 }
