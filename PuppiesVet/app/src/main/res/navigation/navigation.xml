@@ -39,6 +39,27 @@
         <action
             android:id="@+id/action_inicioFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_listarMascotas"
+            app:destination="@id/listarMascotas" />
+    </fragment>
+    <fragment
+        android:id="@+id/listarMascotas"
+        android:name="com.upc.puppiesvet.ui.mascota.ListarMascotas"
+        android:label="fragment_listarmascotas"
+        tools:layout="@layout/fragment_listarmascotas" >
+        <action
+            android:id="@+id/action_listarMascotas_to_registrarMascotasFragment"
+            app:destination="@id/registrarMascotasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarMascotasFragment"
+        android:name="com.upc.puppiesvet.ui.mascota.RegistrarMascotasFragment"
+        android:label="fragment_registrarmascotas"
+        tools:layout="@layout/fragment_registrarmascotas" >
+        <action
+            android:id="@+id/action_registrarMascotasFragment_to_listarMascotas"
+            app:destination="@id/listarMascotas" />
     </fragment>
 
 
