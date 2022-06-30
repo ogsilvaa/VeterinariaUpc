@@ -8,6 +8,8 @@
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/drawable/fondo_boton.xml" value="0.387" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_inicio.xml" value="0.275" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_mascota.xml" value="0.300561797752809" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/activity_perfil.xml" value="0.22" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fila_mascotas.xml" value="0.33" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_bienvenida.xml" value="0.1" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_header.xml" value="0.22" />
@@ -15,7 +17,7 @@
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_listar_mascotas.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_listarmascotas.xml" value="0.2712962962962963" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_login.xml" value="0.33" />
-        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
+        <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_perfil.xml" value="0.16602316602316602" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_registrar_mascotas.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/alons/AndroidStudioProjects/VeterinariaUpc/PuppiesVet/app/src/main/res/layout/fragment_registrarmascotas.xml" value="0.24074074074074073" />
       </map>

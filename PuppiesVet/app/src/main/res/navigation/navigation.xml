@@ -26,41 +26,38 @@
     </fragment>
 
     <fragment
-        android:id="@+id/perfilFragment"
-        android:name="com.upc.puppiesvet.ui.perfil.PerfilFragment"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" >
-    </fragment>
-    <fragment
         android:id="@+id/inicioFragment"
         android:name="com.upc.puppiesvet.ui.navheader.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
-            android:id="@+id/action_inicioFragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
-        <action
             android:id="@+id/action_inicioFragment_to_listarMascotas"
             app:destination="@id/listarMascotas" />
+        <action
+            android:id="@+id/action_inicioFragment_to_perfilActivity"
+            app:destination="@id/perfilActivity" />
     </fragment>
+
     <fragment
         android:id="@+id/listarMascotas"
         android:name="com.upc.puppiesvet.ui.mascota.ListarMascotas"
         android:label="fragment_listarmascotas"
         tools:layout="@layout/fragment_listarmascotas" >
         <action
-            android:id="@+id/action_listarMascotas_to_registrarMascotasFragment"
-            app:destination="@id/registrarMascotasFragment" />
+            android:id="@+id/action_listarMascotas_to_mascotaActivity"
+            app:destination="@id/mascotaActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/registrarMascotasFragment"
-        android:name="com.upc.puppiesvet.ui.mascota.RegistrarMascotasFragment"
-        android:label="fragment_registrarmascotas"
-        tools:layout="@layout/fragment_registrarmascotas" >
-        <action
-            android:id="@+id/action_registrarMascotasFragment_to_listarMascotas"
-            app:destination="@id/listarMascotas" />
-    </fragment>
+
+    <activity
+        android:id="@+id/perfilActivity"
+        android:name="com.upc.puppiesvet.PerfilActivity"
+        android:label="activity_perfil"
+        tools:layout="@layout/activity_perfil" />
+    <activity
+        android:id="@+id/mascotaActivity"
+        android:name="com.upc.puppiesvet.MascotaActivity"
+        android:label="activity_mascota"
+        tools:layout="@layout/activity_mascota" />
 
 
 </navigation>

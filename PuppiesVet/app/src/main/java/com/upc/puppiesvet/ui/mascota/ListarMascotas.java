@@ -28,7 +28,7 @@ public class ListarMascotas extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         FloatingActionButton fb_agregarMascota = view.findViewById(R.id.fb_agregarMascota);
         fb_agregarMascota.setOnClickListener(v -> {
-            NavHostFragment.findNavController(ListarMascotas.this).navigate(R.id.registrarMascotasFragment);
+            NavHostFragment.findNavController(ListarMascotas.this).navigate(R.id.mascotaActivity);
         });
     }
 }

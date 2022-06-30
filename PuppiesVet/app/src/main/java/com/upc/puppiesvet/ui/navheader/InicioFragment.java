@@ -32,7 +32,7 @@ public class InicioFragment extends Fragment {
         Button btn_Perfil = view.findViewById(R.id.btn_Perfil);
         Button btn_Mascota= view.findViewById(R.id.btn_Mascota);
         btn_Perfil.setOnClickListener(v -> {
-            NavHostFragment.findNavController(InicioFragment.this).navigate(R.id.perfilFragment);
+            NavHostFragment.findNavController(InicioFragment.this).navigate(R.id.perfilActivity);
         });
         btn_Mascota.setOnClickListener(v -> {
             NavHostFragment.findNavController(InicioFragment.this).navigate(R.id.listarMascotas);
