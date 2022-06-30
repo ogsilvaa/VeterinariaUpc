@@ -14,9 +14,7 @@ import android.widget.Button;
 
 import com.upc.puppiesvet.R;
 
-
 public class InicioFragment extends Fragment {
-
 
 
     @Override

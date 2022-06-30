@@ -1,4 +1,4 @@
-package com.upc.puppiesvet.ui.perfil;
+package com.upc.puppiesvet;
 
 public class EntidadPerfil {
 

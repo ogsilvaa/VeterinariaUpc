@@ -3,7 +3,6 @@ package com.upc.puppiesvet;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,17 +11,17 @@ import android.widget.EditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.upc.puppiesvet.ui.perfil.EntidadPerfil;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    Button btn_RegistrarPerfil;
     EditText et_Nombres,et_Apellidos,et_Correo, et_Celular,et_Direccion,et_PasswordPerfil;
+    Button btn_RegistrarPerfil;
 
     FirebaseDatabase database;
     DatabaseReference reference;
 
     EntidadPerfil entidadPerfil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,39 +34,35 @@ public class PerfilActivity extends AppCompatActivity {
 
     private void asignarReferencias() {
 
-        btn_RegistrarPerfil=findViewById(R.id.btn_RegistrarPerfil);
-
         et_Nombres = findViewById(R.id.et_Nombres);
         et_Apellidos = findViewById(R.id.et_Apellidos);
         et_Correo= findViewById(R.id.et_Correo);
         et_Celular = findViewById(R.id.et_Celular);
         et_Direccion = findViewById(R.id.et_Direccion);
         et_PasswordPerfil = findViewById(R.id.et_PasswordPerfil);
-
+        btn_RegistrarPerfil=findViewById(R.id.btn_RegistrarPerfil);
         btn_RegistrarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PerfilActivity.this, PerfilActivity.class);
-                startActivity(intent);
-                if(capturarDatos()){
+                if(capturarDatosPerfil()){
                     reference.child("Perfil").child(entidadPerfil.getId()).setValue(entidadPerfil);
                     AlertDialog.Builder ventana = new AlertDialog.Builder(PerfilActivity.this);
                     ventana.setTitle("¡Listo!");
-                    ventana.setMessage("Se registraron los datos del perfil.");
-                    ventana.setPositiveButton("ACEPTAR", null);
+                    ventana.setMessage("Se regitró el perfil");
+                    ventana.setPositiveButton("OK", null);
                     ventana.create().show();
                 }
             }
         });
     }
 
-    private void inicializarFirebase() {
+    private void inicializarFirebase(){
         FirebaseApp.initializeApp(this);
-        database =FirebaseDatabase.getInstance();
+        database= FirebaseDatabase.getInstance();
         reference = database.getReference();
     }
 
-    private boolean capturarDatos() {
+    private boolean capturarDatosPerfil(){
         String nombres = et_Nombres.getText().toString();
         String apellidos = et_Apellidos.getText().toString();
         String correo = et_Correo.getText().toString();
@@ -113,5 +108,7 @@ public class PerfilActivity extends AppCompatActivity {
         }
 
         return valida;
+
     }
+
 }
