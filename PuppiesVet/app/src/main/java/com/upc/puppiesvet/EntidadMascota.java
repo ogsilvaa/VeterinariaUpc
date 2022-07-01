@@ -1,4 +1,4 @@
-package com.upc.puppiesvet.ui.mascota;
+package com.upc.puppiesvet;
 
 public class EntidadMascota {
 
