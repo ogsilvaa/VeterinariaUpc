@@ -1,8 +1,8 @@
-package com.upc.puppiesvet;
+package com.upc.puppiesvet.entidad;
 
-public class EntidadPerfil {
+public class Usuario {
 
-    private String id;
+    private Integer idUsuario;
     private String nombres;
     private String apellidos;
     private String correo;
@@ -10,13 +10,31 @@ public class EntidadPerfil {
     private String direccion;
     private String password;
 
-
-    public String getId() {
-        return id;
+    public Usuario(Integer idUsuario, String nombres, String apellidos, String correo, String celular, String direccion, String password) {
+        this.idUsuario = idUsuario;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.password = password;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public Usuario(String nombres, String apellidos, String correo, String celular, String direccion, String password) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.password = password;
+    }
+
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombres() {
@@ -64,25 +82,6 @@ public class EntidadPerfil {
     }
 
     public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public EntidadPerfil(String id, String nombres, String apellidos, String correo, String celular, String direccion, String password) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.celular = celular;
-        this.direccion = direccion;
-        this.password = password;
-    }
-
-    public EntidadPerfil(String nombres, String apellidos, String correo, String celular, String direccion, String password) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.celular = celular;
-        this.direccion = direccion;
         this.password = password;
     }
 }

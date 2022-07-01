@@ -25,7 +25,7 @@
             android:name=".MascotaActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilActivity"
+            android:name=".UsuarioActivity"
             android:exported="false" />
         <activity
             android:name=".InicioActivity"

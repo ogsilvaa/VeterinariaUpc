@@ -22,7 +22,7 @@ public class InicioActivity extends AppCompatActivity {
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InicioActivity.this, PerfilActivity.class);
+                Intent intent = new Intent(InicioActivity.this, UsuarioActivity.class);
                 startActivity(intent);
             }
         });

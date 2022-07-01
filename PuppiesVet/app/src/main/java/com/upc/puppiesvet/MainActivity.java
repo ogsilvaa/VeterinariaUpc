@@ -7,14 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.upc.puppiesvet.utilidades.PuppiesVetBD;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btn_Bienvenida;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PuppiesVetBD conn= new PuppiesVetBD(this,"PuppiesVetBD",null,1);
 
         btn_Bienvenida=(Button)findViewById(R.id.btn_Bienvenida);
         btn_Bienvenida.setOnClickListener(new View.OnClickListener() {
