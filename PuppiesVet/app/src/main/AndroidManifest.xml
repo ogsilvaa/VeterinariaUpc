@@ -2,10 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.upc.puppiesvet">
-
-    <!--Se añadieron las líneas 8 y 16 para dar el acceso a internet-->
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!-- Se añadieron las líneas 8 y 16 para dar el acceso a internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,11 +11,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PuppiesVet"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".RecuperarPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".ListarMascotasActivity"
             android:exported="false" />
