@@ -48,4 +48,19 @@ public class EntidadMascota {
     public void setEdad(String edad) {
         this.edad = edad;
     }
+
+    public EntidadMascota(String id, String nombre, String tipo, String genero, String edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.genero = genero;
+        this.edad = edad;
+    }
+
+    public EntidadMascota(String nombre, String tipo, String genero, String edad) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.genero = genero;
+        this.edad = edad;
+    }
 }
