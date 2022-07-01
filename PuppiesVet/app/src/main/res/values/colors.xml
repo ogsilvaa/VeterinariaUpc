@@ -8,7 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_principal">#152245</color>
-    <color name="color_formularios">#47525E</color>
+    <color name="color_header">#9FDEFF</color>
+    <color name="color_formularios">#6D758B</color>
     <color name="color_enlaces">#00A6FF</color>
-    <color name="color_botonesNav">#C6CBD1</color>
+    <color name="color_botonesNav">#C5C8D1</color>
 </resources>

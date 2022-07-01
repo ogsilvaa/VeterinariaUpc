@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MascotaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fc_Header"
+            android:name="com.upc.puppiesvet.HeaderFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_NombreMascota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="NOMBRE"
+                    android:textColor="@color/color_principal"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <EditText
+                    android:id="@+id/et_NombreMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Ingresa el nombre de tu mascota"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_NombreMascota" />
+
+                <TextView
+                    android:id="@+id/tv_TipoMascota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="TIPO"
+                    android:textColor="@color/color_principal"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_NombreMascota" />
+
+                <EditText
+                    android:id="@+id/et_TipoMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Gato / Perro / Otro..."
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_TipoMascota" />
+
+                <LinearLayout
+                    android:id="@+id/lo_GeneroEdadMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_TipoMascota">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_GeneroMascota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="GÉNERO"
+                            android:textColor="@color/color_principal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/et_TipoMascota" />
+
+                        <EditText
+                            android:id="@+id/et_GeneroMascota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:ems="10"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Macho / Hembra"
+                            android:inputType="textPersonName"
+                            android:minHeight="48dp"
+                            android:textColorHint="#546E7A"
+                            app:layout_constraintEnd_toStartOf="@+id/et_EdadMascota"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_GeneroMascota" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="12dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_EdadMascota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="EDAD"
+                            android:textColor="@color/color_principal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tv_GeneroMascota"
+                            app:layout_constraintTop_toBottomOf="@+id/et_TipoMascota" />
+
+
+                        <EditText
+                            android:id="@+id/et_EdadMascota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:ems="10"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Edad en años"
+                            android:inputType="number"
+                            android:minHeight="48dp"
+                            android:textColorHint="#546E7A"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_EdadMascota" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btn_RegistrarPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/fondo_boton"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="REGISTRAR"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lo_GeneroEdadMascota" />
+
+                <TextView
+                    android:id="@+id/tv_EliminarMascota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Eliminar Mascota"
+                    android:textColor="@color/color_enlaces"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_RegistrarPerfil" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

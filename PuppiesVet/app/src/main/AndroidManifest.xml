@@ -3,16 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.upc.puppiesvet">
 
+    <!--Se añadieron las líneas 8 y 16 para dar el acceso a internet-->
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:theme="@style/Theme.PuppiesVet"
         tools:targetApi="31">
+        <activity
+            android:name=".ListarMascotasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MascotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
