@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.upc.puppiesvet">
-    <!-- Se añadieron las líneas 8 y 16 para dar el acceso a internet -->
+    <!-- Se añadieron las líneas 6 y 17 para dar el acceso a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application

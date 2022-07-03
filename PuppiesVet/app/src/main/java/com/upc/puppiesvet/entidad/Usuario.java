@@ -2,7 +2,7 @@ package com.upc.puppiesvet.entidad;
 
 public class Usuario {
 
-    private Integer idUsuario;
+    private String idUsuario;
     private String nombres;
     private String apellidos;
     private String correo;
@@ -10,30 +10,11 @@ public class Usuario {
     private String direccion;
     private String password;
 
-    public Usuario(Integer idUsuario, String nombres, String apellidos, String correo, String celular, String direccion, String password) {
-        this.idUsuario = idUsuario;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.celular = celular;
-        this.direccion = direccion;
-        this.password = password;
-    }
-
-    public Usuario(String nombres, String apellidos, String correo, String celular, String direccion, String password) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.celular = celular;
-        this.direccion = direccion;
-        this.password = password;
-    }
-
-    public Integer getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 

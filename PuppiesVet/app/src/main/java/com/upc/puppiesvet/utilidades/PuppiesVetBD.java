@@ -7,22 +7,38 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class PuppiesVetBD extends SQLiteOpenHelper {
 
-
-    public PuppiesVetBD( Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public PuppiesVetBD(Context context){
+        super(context, "puppiesvet.db",null,1);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(Utilidades.CREAR_TABLA_USUARIO);
-        db.execSQL(Utilidades.CREAR_TABLA_MASCOTA);
+
+        String queryUsuario ="CREATE TABLE tabla_usuario"+
+                "(id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                "nombres TEXT NOT NULL, "+
+                "apellidos TEXT NOT NULL, "+
+                "correo TEXT NOT NULL, "+
+                "celular INTEGER NOT NULL, "+
+                "direccion TEXT NOT NULL, "+
+                "password TEXT NOT NULL);";
+
+      /*  String queryMascota ="CREATE TABLE tabla_mascota"+
+                "(id_mascota INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                "id_propietario INTEGER REFERENCES tabla_usuario (id_usuario), "+
+                "nombre_mascota TEXT NOT NULL, "+
+                "genero TEXT NOT NULL, "+
+                "edad INTEGER NOT NULL);";*/
+
+        db.execSQL(queryUsuario);
+/*
+        db.execSQL(queryMascota);
+*/
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+ Utilidades.TABLA_USUARIO);
-        db.execSQL("DROP TABLE IF EXISTS "+ Utilidades.TABLA_MASCOTA);
-        onCreate(db);
+
     }
 }
