@@ -31,7 +31,7 @@ public class RecuperarPasswordActivity extends AppCompatActivity {
         tv_Registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(RecuperarPasswordActivity.this, LoginActivity.class);
+                Intent intent= new Intent(RecuperarPasswordActivity.this, UsuarioActivity.class);
                 startActivity(intent);
             }
         });

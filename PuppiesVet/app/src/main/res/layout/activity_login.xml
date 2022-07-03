@@ -18,6 +18,7 @@
 
     <TextView
         android:id="@+id/tv_Usuario"
+        android:labelFor="@id/et_CorreoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -43,6 +44,7 @@
 
     <TextView
         android:id="@+id/tv_Password"
+        android:labelFor="@id/et_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"

@@ -34,6 +34,7 @@
 
                 <TextView
                     android:id="@+id/tv_Nombres"
+                    android:labelFor="@id/et_Nombres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
@@ -60,6 +61,7 @@
 
                 <TextView
                     android:id="@+id/tv_Apellidos"
+                    android:labelFor="@id/et_Apellidos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -87,6 +89,7 @@
 
                 <TextView
                     android:id="@+id/tv_Correo"
+                    android:labelFor="@id/et_Correo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -113,6 +116,7 @@
 
                 <TextView
                     android:id="@+id/tv_Celular"
+                    android:labelFor="@id/et_Celular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -138,6 +142,7 @@
 
                 <TextView
                     android:id="@+id/tv_Direccion"
+                    android:labelFor="@id/et_Direccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -163,6 +168,7 @@
 
                 <TextView
                     android:id="@+id/tv_PasswordPerfil"
+                    android:labelFor="@id/et_PasswordPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

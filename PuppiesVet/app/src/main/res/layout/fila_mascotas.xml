@@ -35,9 +35,10 @@
                 android:id="@+id/text_NombreMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="12dp"
-                android:text="Nombre"
                 android:fontFamily="@font/roboto_bold"
+                android:text="Nombre"
                 android:textColor="@color/color_principal"
                 app:layout_constraintStart_toEndOf="@+id/iv_mascotaSinFoto"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -58,10 +59,11 @@
                 android:id="@+id/text_GeneroMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/color_principal"
                 android:text="Género"
+                android:textColor="@color/color_principal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_mascotaSinFoto" />
 
