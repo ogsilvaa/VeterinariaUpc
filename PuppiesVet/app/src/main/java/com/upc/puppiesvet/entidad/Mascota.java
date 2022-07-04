@@ -2,44 +2,18 @@ package com.upc.puppiesvet.entidad;
 
 public class Mascota {
 
-    private Integer idMascota;
-    private Integer idUsuario;
+    private String idMascota;
     private String nombre;
     private String tipo;
     private String genero;
-    private Integer edad;
+    private String edad;
 
-    public Mascota(Integer idMascota, Integer idUsuario, String nombre, String tipo, String genero, Integer edad) {
-        this.idMascota = idMascota;
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.genero = genero;
-        this.edad = edad;
-    }
-
-    public Mascota(Integer idUsuario, String nombre, String tipo, String genero, Integer edad) {
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.genero = genero;
-        this.edad = edad;
-    }
-
-    public Integer getIdMascota() {
+    public String getIdMascota() {
         return idMascota;
     }
 
-    public void setIdMascota(Integer idMascota) {
+    public void setIdMascota(String idMascota) {
         this.idMascota = idMascota;
-    }
-
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -66,11 +40,21 @@ public class Mascota {
         this.genero = genero;
     }
 
-    public Integer getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(Integer edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Mascota{" +
+                "nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", edad='" + edad + '\'' +
+                '}';
     }
 }

@@ -32,7 +32,7 @@
 
 
             <TextView
-                android:id="@+id/text_NombreMascota"
+                android:id="@+id/fila_NombreMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_TipoMascota"
+                android:id="@+id/fila_TipoMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_GeneroMascota"
+                android:id="@+id/fila_GeneroMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -68,7 +68,7 @@
                 app:layout_constraintStart_toEndOf="@+id/iv_mascotaSinFoto" />
 
             <TextView
-                android:id="@+id/text_EdadMascota"
+                android:id="@+id/fila_EdadMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
