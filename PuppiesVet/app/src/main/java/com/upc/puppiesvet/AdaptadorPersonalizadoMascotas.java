@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +41,13 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
         holder.fila_TipoMascota.setText(listaMascotas.get(position).getTipo()+"");
         holder.fila_GeneroMascota.setText(listaMascotas.get(position).getGenero()+"");
         holder.fila_EdadMascota.setText(listaMascotas.get(position).getEdad()+"");
+        holder.fila_Mascota.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(context, "editar", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
     @Override
@@ -48,12 +57,15 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView fila_NombreMascota,fila_TipoMascota,fila_GeneroMascota,fila_EdadMascota;
+        LinearLayout fila_Mascota;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             fila_NombreMascota = itemView.findViewById(R.id.fila_NombreMascota);
             fila_TipoMascota= itemView.findViewById(R.id.fila_TipoMascota);
             fila_GeneroMascota= itemView.findViewById(R.id.fila_GeneroMascota);
             fila_EdadMascota= itemView.findViewById(R.id.fila_EdadMascota);
+            fila_Mascota = itemView.findViewById(R.id.fila_Mascota);
 
         }
     }
