@@ -35,6 +35,8 @@ public class ListarMascotasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_mascotas);
 
+        rv_Mascotas = findViewById(R.id.rv_Mascotas);
+
         asignarReferencias();
         inicializarFirebase();
         mostrarDatos();
