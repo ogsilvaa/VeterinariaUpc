@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class InicioActivity extends AppCompatActivity {
     // Creando rama Steven
+    // Configurado Github
     Button btn_Perfil, btn_Mascota;
 
     @Override
