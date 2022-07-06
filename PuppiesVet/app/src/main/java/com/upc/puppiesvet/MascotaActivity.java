@@ -23,7 +23,9 @@ public class MascotaActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference reference;
+
     Mascota mascota;
+    boolean registra = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,18 @@ public class MascotaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mascota);
 
         asignarReferencias();
+        obtenerDatosMascota();
         inicializarFirebase();
+    }
+
+    private void obtenerDatosMascota() {
+        if(getIntent().hasExtra("parametroID")){
+            registra=false;
+            et_NombreMascota.setText(getIntent().getStringExtra("parametroNombre"));
+            et_TipoMascota.setText(getIntent().getStringExtra("parametroTipo"));
+            et_GeneroMascota.setText(getIntent().getStringExtra("parametroGenero"));
+            et_EdadMascota.setText(getIntent().getStringExtra("parametroEdad"));
+        }
     }
 
     private void asignarReferencias() {

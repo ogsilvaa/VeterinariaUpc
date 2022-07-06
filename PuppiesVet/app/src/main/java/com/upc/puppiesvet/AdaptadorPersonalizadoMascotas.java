@@ -1,6 +1,8 @@
 package com.upc.puppiesvet;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,16 +38,21 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdaptadorPersonalizadoMascotas.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdaptadorPersonalizadoMascotas.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.fila_NombreMascota.setText(listaMascotas.get(position).getNombre()+"");
         holder.fila_TipoMascota.setText(listaMascotas.get(position).getTipo()+"");
         holder.fila_GeneroMascota.setText(listaMascotas.get(position).getGenero()+"");
         holder.fila_EdadMascota.setText(listaMascotas.get(position).getEdad()+"");
-        holder.fila_Mascota.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.fila_Mascota.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(context, "editar", Toast.LENGTH_SHORT).show();
-                return false;
+            public void onClick(View v) {
+                Intent intent = new Intent(context,MascotaActivity.class);
+                intent.putExtra("parametroID",listaMascotas.get(position).getIdMascota()+"");
+                intent.putExtra("parametroNombre",listaMascotas.get(position).getNombre()+"");
+                intent.putExtra("parametroTipo",listaMascotas.get(position).getTipo()+"");
+                intent.putExtra("parametroGenero",listaMascotas.get(position).getGenero()+"");
+                intent.putExtra("parametroEdad",listaMascotas.get(position).getEdad()+"");
+                context.startActivity(intent);
             }
         });
     }
