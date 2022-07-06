@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.upc.puppiesvet.entidad.Mascota;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 public class MascotaActivity extends AppCompatActivity {
@@ -26,6 +27,8 @@ public class MascotaActivity extends AppCompatActivity {
 
     Mascota mascota;
     boolean registra = true;
+    HashMap map =new HashMap();
+    String idMascota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class MascotaActivity extends AppCompatActivity {
     private void obtenerDatosMascota() {
         if(getIntent().hasExtra("parametroID")){
             registra=false;
+            idMascota = getIntent().getStringExtra("parametroID");
             et_NombreMascota.setText(getIntent().getStringExtra("parametroNombre"));
             et_TipoMascota.setText(getIntent().getStringExtra("parametroTipo"));
             et_GeneroMascota.setText(getIntent().getStringExtra("parametroGenero"));
@@ -58,10 +62,20 @@ public class MascotaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(capturarDatos()){
-                    reference.child("Mascota").child(mascota.getIdMascota()).setValue(mascota);
+
+                    String mensaje ="";
+
+                    if(registra){
+                        reference.child("Mascota").child(mascota.getIdMascota()).setValue(mascota);
+                        mensaje="Se ha registrado a tu mascota.";
+                    }else {
+                        reference.child("Mascota").child(idMascota).updateChildren(map);
+                        mensaje="Se editaron los datos de tu mascota.";
+                    }
+
                     AlertDialog.Builder ventana =new AlertDialog.Builder(MascotaActivity.this);
                     ventana.setTitle("Mascota registrada");
-                    ventana.setMessage("Se ha registrado a tu mascota.");
+                    ventana.setMessage(mensaje);
                     ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -110,12 +124,19 @@ public class MascotaActivity extends AppCompatActivity {
 
 
         if(valida){
-            mascota = new Mascota();
-            mascota.setIdMascota(UUID.randomUUID().toString());
-            mascota.setNombre(nombreMascota);
-            mascota.setTipo(tipoMascota);
-            mascota.setGenero(generoMascota);
-            mascota.setEdad(edadMascota);
+            if(registra){
+                mascota = new Mascota();
+                mascota.setIdMascota(UUID.randomUUID().toString());
+                mascota.setNombre(nombreMascota);
+                mascota.setTipo(tipoMascota);
+                mascota.setGenero(generoMascota);
+                mascota.setEdad(edadMascota);
+            }else {
+                map.put("nombre",nombreMascota);
+                map.put("tipo",tipoMascota);
+                map.put("genero",generoMascota);
+                map.put("edad",edadMascota);
+            }
         }
         return valida;
 
