@@ -17,7 +17,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fc_Header"
-            android:name="com.upc.puppiesvet.HeaderFragment"
+            android:name="com.upc.puppiesvet.fragments.HeaderFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

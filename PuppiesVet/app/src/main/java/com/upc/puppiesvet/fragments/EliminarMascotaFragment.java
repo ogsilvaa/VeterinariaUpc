@@ -1,4 +1,4 @@
-package com.upc.puppiesvet;
+package com.upc.puppiesvet.fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
