@@ -30,6 +30,8 @@ public class ListarMascotasActivity extends AppCompatActivity {
     DatabaseReference reference;
     private List<Mascota> listaMascotas = new ArrayList<>();
 
+    AdaptadorPersonalizadoMascotas adaptador;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,7 @@ public class ListarMascotasActivity extends AppCompatActivity {
                     Mascota mascota = item.getValue(Mascota.class);
                     listaMascotas.add(mascota);
                 }
-                AdaptadorPersonalizadoMascotas adaptador = new AdaptadorPersonalizadoMascotas(ListarMascotasActivity.this,listaMascotas);
+                adaptador = new AdaptadorPersonalizadoMascotas(ListarMascotasActivity.this,listaMascotas);
                 rv_Mascotas.setAdapter(adaptador);
                 rv_Mascotas.setLayoutManager(new LinearLayoutManager(ListarMascotasActivity.this));
             }
