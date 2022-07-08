@@ -2,15 +2,18 @@ package com.upc.puppiesvet;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.upc.puppiesvet.entidad.Mascota;
@@ -39,6 +42,7 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorPersonalizadoMascotas.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
         holder.fila_NombreMascota.setText(listaMascotas.get(position).getNombre()+"");
         holder.fila_TipoMascota.setText(listaMascotas.get(position).getTipo()+"");
         holder.fila_GeneroMascota.setText(listaMascotas.get(position).getGenero()+"");
@@ -55,6 +59,24 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
                 context.startActivity(intent);
             }
         });
+
+        holder.fila_Eliminarmascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder ventana = new AlertDialog.Builder(context);
+                ventana.setTitle("¿Deseas eliminar a la mascota?");
+                ventana.setMessage("Si deseas proceder, da click en OK.");
+                ventana.setNegativeButton("CANCELAR", null);
+                ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        final String idMascota = listaMascotas.get(position).getIdMascota();
+                        Toast.makeText(context, "Se eliminó a la mascota seleccionada.", Toast.LENGTH_LONG).show();
+                    }
+                });
+                ventana.create().show();
+            }
+        });
     }
 
     @Override
@@ -65,6 +87,7 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView fila_NombreMascota,fila_TipoMascota,fila_GeneroMascota,fila_EdadMascota;
         LinearLayout fila_Mascota;
+        ImageButton fila_Eliminarmascota;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,6 +96,7 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
             fila_GeneroMascota= itemView.findViewById(R.id.fila_GeneroMascota);
             fila_EdadMascota= itemView.findViewById(R.id.fila_EdadMascota);
             fila_Mascota = itemView.findViewById(R.id.fila_Mascota);
+            fila_Eliminarmascota= itemView.findViewById(R.id.ib_Eliminarmascota);
 
         }
     }

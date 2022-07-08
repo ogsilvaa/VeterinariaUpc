@@ -80,6 +80,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_mascotaSinFoto" />
 
+            <ImageButton
+                android:id="@+id/ib_Eliminarmascota"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/color_botonesNav"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fila_EdadMascota"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fila_TipoMascota"
+                app:srcCompat="@drawable/deletepet" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

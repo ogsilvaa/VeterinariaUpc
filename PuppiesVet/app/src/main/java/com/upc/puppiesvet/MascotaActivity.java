@@ -14,7 +14,6 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.upc.puppiesvet.entidad.Mascota;
-import com.upc.puppiesvet.fragments.EliminarMascotaFragment;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -23,7 +22,6 @@ public class MascotaActivity extends AppCompatActivity {
 
     EditText et_NombreMascota,et_TipoMascota,et_GeneroMascota,et_EdadMascota;
     Button btn_RegistrarMascota;
-    TextView tv_EliminarMascota;
 
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -41,24 +39,7 @@ public class MascotaActivity extends AppCompatActivity {
         asignarReferencias();
         obtenerDatosMascota();
         inicializarFirebase();
-        eliminarMascota();
     }
-
-    private void eliminarMascota() {
-        tv_EliminarMascota=findViewById(R.id.tv_EliminarMascota);
-        tv_EliminarMascota.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                eliminarMascotaFragment();
-            }
-        });
-    }
-
-    private void eliminarMascotaFragment(){
-        EliminarMascotaFragment eliminarMascotaFragment = new EliminarMascotaFragment();
-        eliminarMascotaFragment.show(getSupportFragmentManager(),"Eliminar Mascota");
-    }
-
 
 
     private void obtenerDatosMascota() {

@@ -25,23 +25,20 @@ public class ListarMascotasActivity extends AppCompatActivity {
 
     FloatingActionButton fb_agregarMascota;
     RecyclerView rv_Mascotas;
-
     FirebaseDatabase database;
     DatabaseReference reference;
     private List<Mascota> listaMascotas = new ArrayList<>();
-
     AdaptadorPersonalizadoMascotas adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_mascotas);
-
         rv_Mascotas = findViewById(R.id.rv_Mascotas);
-
         asignarReferencias();
         inicializarFirebase();
-        mostrarDatos();
+        mostrarMascotas();
+
     }
 
     private void asignarReferencias() {
@@ -61,7 +58,7 @@ public class ListarMascotasActivity extends AppCompatActivity {
         reference =database.getReference();
     }
 
-    private void mostrarDatos() {
+    private void mostrarMascotas() {
         reference.child("Mascota").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -74,13 +71,12 @@ public class ListarMascotasActivity extends AppCompatActivity {
                 rv_Mascotas.setAdapter(adaptador);
                 rv_Mascotas.setLayoutManager(new LinearLayoutManager(ListarMascotasActivity.this));
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }
+
 
 
 }
