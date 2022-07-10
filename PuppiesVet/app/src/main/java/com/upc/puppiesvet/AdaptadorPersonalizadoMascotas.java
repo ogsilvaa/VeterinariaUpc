@@ -14,8 +14,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
 import com.upc.puppiesvet.entidad.Mascota;
 
 import java.util.ArrayList;
@@ -25,12 +27,15 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
 
     private Context context;
     private List<Mascota>listaMascotas = new ArrayList<>();
+    DatabaseReference reference;
+    Mascota mascota;
 
-    public AdaptadorPersonalizadoMascotas(Context context, List<Mascota> listaMascotas){
+
+    public AdaptadorPersonalizadoMascotas(Context context, List<Mascota> listaMascotas, DatabaseReference reference){
         this.context = context;
         this.listaMascotas=listaMascotas;
+        this.reference= reference;
     }
-
 
     @NonNull
     @Override
@@ -70,7 +75,7 @@ public class AdaptadorPersonalizadoMascotas extends RecyclerView.Adapter<Adaptad
                 ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        final String idMascota = listaMascotas.get(position).getIdMascota();
+                        reference.child("Mascota").child(listaMascotas.get(position).getIdMascota()).removeValue();
                         Toast.makeText(context, "Se eliminó a la mascota seleccionada.", Toast.LENGTH_LONG).show();
                     }
                 });
