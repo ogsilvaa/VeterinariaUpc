@@ -4,6 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,14 +51,17 @@ public class UsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(capturarDatos()){
-
-                    //TODO HERE poner validacion de usuario
-
                     reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
                     AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
                     ventana.setTitle("Usuario registrado");
                     ventana.setMessage("Se ha registrado al usuario.");
-                    ventana.setPositiveButton("OK",null);
+                    ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(UsuarioActivity.this, InicioActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                     ventana.create().show();
                 }
             }
