@@ -45,7 +45,6 @@ public class UsuarioActivity extends AppCompatActivity {
         et_Celular= findViewById(R.id.et_Celular);
         et_Direccion= findViewById(R.id.et_Direccion);
         et_PasswordPerfil= findViewById(R.id.et_PasswordPerfil);
-
         btn_RegistrarUsuario=findViewById(R.id.btn_RegistrarUsuario);
         btn_RegistrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
