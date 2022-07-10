@@ -49,6 +49,9 @@ public class UsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(capturarDatos()){
+
+                    //TODO HERE poner validacion de usuario
+
                     reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
                     AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
                     ventana.setTitle("Usuario registrado");
@@ -102,7 +105,12 @@ public class UsuarioActivity extends AppCompatActivity {
         }
 
         if(et_PasswordPerfil.equals("")){
-            et_Nombres.setError("Contraseña obligatoria");
+            et_PasswordPerfil.setError("Contraseña obligatoria");
+            valida = false;
+        }
+
+        if(et_PasswordPerfil.length()<6){
+            et_PasswordPerfil.setError("Contraseña debe contener 6 caracteres o más");
             valida = false;
         }
 
