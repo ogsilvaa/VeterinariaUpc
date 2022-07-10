@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+public class AuthActivity extends AppCompatActivity {
 
     Button btn_Ingresar;
     TextView tv_Registrarse, tv_OlvidoPassword;
@@ -16,13 +16,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_auth);
 
         tv_OlvidoPassword=(TextView)findViewById(R.id.tv_OlvidoPassword);
         tv_OlvidoPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(LoginActivity.this, RecuperarPasswordActivity.class);
+                Intent intent= new Intent(AuthActivity.this, RecuperarPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_Ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(LoginActivity.this,InicioActivity.class);
+                Intent intent= new Intent(AuthActivity.this,InicioActivity.class);
                 startActivity(intent);
             }
         });
@@ -40,10 +40,20 @@ public class LoginActivity extends AppCompatActivity {
         tv_Registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(LoginActivity.this, UsuarioActivity.class);
+                Intent intent= new Intent(AuthActivity.this, UsuarioActivity.class);
                 startActivity(intent);
             }
         });
 
+
     }
+
+
+
+
+
+
+
+
+
 }

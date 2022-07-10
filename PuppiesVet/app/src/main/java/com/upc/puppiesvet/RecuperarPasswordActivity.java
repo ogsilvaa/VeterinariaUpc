@@ -22,7 +22,7 @@ public class RecuperarPasswordActivity extends AppCompatActivity {
         btn_RecuperarPSW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RecuperarPasswordActivity.this,LoginActivity.class);
+                Intent intent=new Intent(RecuperarPasswordActivity.this, AuthActivity.class);
                 startActivity(intent);
             }
         });
