@@ -40,7 +40,7 @@ public class InicioActivity extends AppCompatActivity {
         btn_Servicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InicioActivity.this,Service_mascot.class);
+                Intent intent = new Intent(InicioActivity.this,Lista_servicios.class);
                 startActivity(intent);
             }
         });
