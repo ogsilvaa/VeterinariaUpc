@@ -16,6 +16,7 @@
         android:theme="@style/Theme.PuppiesVet"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
             android:name=".RecuperarPasswordActivity"
             android:exported="false" />
