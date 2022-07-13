@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,7 +44,6 @@ public class UsuarioActivity extends AppCompatActivity {
 
     }
 
-
     private void asignarReferencias(){
         et_Nombres= findViewById(R.id.et_Nombres);
         et_Apellidos= findViewById(R.id.et_Apellidos);
@@ -56,25 +56,32 @@ public class UsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(capturarDatos()){
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(et_Correo.toString(),et_PasswordPerfil.toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
-                            AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
-                            ventana.setTitle("Usuario registrado");
-                            ventana.setMessage("Se ha registrado al usuario.");
-                            ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(usuario.getCorreo(),usuario.getPassword())
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Intent intent = new Intent(UsuarioActivity.this, InicioActivity.class);
-                                    startActivity(intent);
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(UsuarioActivity.this,"Usuario registrado correctamente",Toast.LENGTH_LONG).show();
+                                        //guardar en la base de datos
+                                        reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
+                                        AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
+                                        ventana.setTitle("Usuario registrado");
+                                        ventana.setMessage("Se ha registrado al usuario.");
+                                        ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                Intent intent= new Intent(UsuarioActivity.this,InicioActivity.class);
+                                                startActivity(intent);
+                                            }
+                                        });
+                                        ventana.create().show();
+                                    }else{
+                                        Toast.makeText(UsuarioActivity.this,"Error al registrar usuario",Toast.LENGTH_LONG).show();
+                                    }
                                 }
                             });
-                            ventana.create().show();
-                        }
-                    });
                 }
-            }
+            };
         });
     }
 
