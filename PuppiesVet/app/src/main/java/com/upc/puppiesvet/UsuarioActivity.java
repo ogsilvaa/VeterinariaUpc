@@ -1,5 +1,6 @@
 package com.upc.puppiesvet;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.upc.puppiesvet.entidad.Usuario;
@@ -38,6 +43,7 @@ public class UsuarioActivity extends AppCompatActivity {
 
     }
 
+
     private void asignarReferencias(){
         et_Nombres= findViewById(R.id.et_Nombres);
         et_Apellidos= findViewById(R.id.et_Apellidos);
@@ -50,18 +56,23 @@ public class UsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(capturarDatos()){
-                    reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
-                    AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
-                    ventana.setTitle("Usuario registrado");
-                    ventana.setMessage("Se ha registrado al usuario.");
-                    ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(et_Correo.toString(),et_PasswordPerfil.toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(UsuarioActivity.this, InicioActivity.class);
-                            startActivity(intent);
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            reference.child("Usuario").child(usuario.getIdUsuario()).setValue(usuario);
+                            AlertDialog.Builder ventana =new AlertDialog.Builder(UsuarioActivity.this);
+                            ventana.setTitle("Usuario registrado");
+                            ventana.setMessage("Se ha registrado al usuario.");
+                            ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(UsuarioActivity.this, InicioActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
+                            ventana.create().show();
                         }
                     });
-                    ventana.create().show();
                 }
             }
         });
