@@ -1,17 +1,18 @@
 package com.upc.puppiesvet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
     Button btn_Ingresar;
     TextView tv_Registrarse, tv_OlvidoPassword;
+    EditText et_CorreoUsuario,et_Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_Ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(LoginActivity.this,InicioActivity.class);
+                Intent intent = new Intent(LoginActivity.this, InicioActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,16 +45,5 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-    }
-
-
-
-
-
-
-
-
-
+    };
 }
