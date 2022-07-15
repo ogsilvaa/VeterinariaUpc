@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class InicioActivity extends AppCompatActivity {
 
-    Button btn_Perfil, btn_Mascota;
+    Button btn_Perfil, btn_Mascota, btn_Servicios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class InicioActivity extends AppCompatActivity {
 
         btn_Perfil=(Button)findViewById(R.id.btn_Perfil);
         btn_Mascota=(Button)findViewById(R.id.btn_Mascota);
+        btn_Servicios=(Button)findViewById(R.id.btn_Servicios);
 
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,5 +35,14 @@ public class InicioActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_Servicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InicioActivity.this, ServiciosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
