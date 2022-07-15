@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiciosActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fc_Header"
+        android:name="com.upc.puppiesvet.fragments.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="174dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_emergencia_veterinaria"
+                        android:layout_width="54dp"
+                        android:layout_height="101dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/img_emergencia_veterinaria"
+                        android:layout_width="77dp"
+                        android:layout_height="82dp"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="EMERGENCIA VETERINARIA"
+                        android:src="@drawable/emergenciarojo" />
+
+                    <TextView
+                        android:id="@+id/txt_emergencia_veterinaria"
+                        android:layout_width="233dp"
+                        android:layout_height="29dp"
+                        android:text="Emergencia Veterinaria"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_marginLeft="20dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_consulta_veterinaria"
+                        android:layout_width="54dp"
+                        android:layout_height="101dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/img_consulta_veterinaria"
+                        android:layout_width="77dp"
+                        android:layout_height="82dp"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="EMERGENCIA VETERINARIA"
+                        android:src="@drawable/consultasveterinario"/>
+
+                    <TextView
+                        android:id="@+id/txt_consulta_veterinaria"
+                        android:layout_width="233dp"
+                        android:layout_height="33dp"
+                        android:text="Consulta Veterinaria"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_marginLeft="20dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_aseo_y_corte"
+                        android:layout_width="54dp"
+                        android:layout_height="101dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_aseo_y_corte"
+                        android:layout_width="77dp"
+                        android:layout_height="82dp"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="ASEO Y CORTE"
+                        android:src="@drawable/grooming"/>
+
+                    <TextView
+                        android:id="@+id/txt_aseo_y_corte"
+                        android:layout_width="233dp"
+                        android:layout_height="33dp"
+                        android:text="Aseo y/o corte"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_marginLeft="20dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_hospedaje_temporal"
+                        android:layout_width="54dp"
+                        android:layout_height="101dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_hospedaje_temporal"
+                        android:layout_width="72dp"
+                        android:layout_height="82dp"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="HOSPEDAJE TEMPORAL"
+                        android:src="@drawable/hospedaje"/>
+
+                    <TextView
+                        android:id="@+id/txt_hospedaje_temporal"
+                        android:layout_width="233dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="20dp"
+                        android:text="Hospedaje temporal"
+                        android:fontFamily="@font/roboto_bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_adoptar_mascota"
+                        android:layout_width="54dp"
+                        android:layout_height="101dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_adoptar_mascota"
+                        android:layout_width="72dp"
+                        android:layout_height="82dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/adoptar"/>
+
+                    <TextView
+                        android:id="@+id/txt_adoptar_mascota"
+                        android:layout_width="233dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="20dp"
+                        android:text="Adoptar una mascota"
+                        android:fontFamily="@font/roboto_bold"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_siguiente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/fondo_boton"
+                    android:fontFamily="@font/roboto_bold"
+                    android:onClick="onclick"
+                    android:text="Solicitar"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

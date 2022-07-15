@@ -67,7 +67,7 @@ public class ListarMascotasActivity extends AppCompatActivity {
                     Mascota mascota = item.getValue(Mascota.class);
                     listaMascotas.add(mascota);
                 }
-                adaptador = new AdaptadorPersonalizadoMascotas(ListarMascotasActivity.this,listaMascotas);
+                adaptador = new AdaptadorPersonalizadoMascotas(ListarMascotasActivity.this,listaMascotas,reference);
                 rv_Mascotas.setAdapter(adaptador);
                 rv_Mascotas.setLayoutManager(new LinearLayoutManager(ListarMascotasActivity.this));
             }
@@ -76,7 +76,4 @@ public class ListarMascotasActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }
