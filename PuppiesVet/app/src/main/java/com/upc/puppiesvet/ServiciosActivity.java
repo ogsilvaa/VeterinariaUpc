@@ -2,8 +2,11 @@ package com.upc.puppiesvet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,11 +34,17 @@ public class ServiciosActivity extends AppCompatActivity {
         txt_aseo_y_corte=(TextView) findViewById(R.id.txt_aseo_y_corte);
         txt_hospedaje_temporal=(TextView) findViewById(R.id.txt_hospedaje_temporal);
         txt_adoptar_mascota=(TextView) findViewById(R.id.txt_adoptar_mascota);
+
     }
 
     public void onclick(View view){
-        if (view.getId() ==R.id.btn_siguiente ) {
+        if (view.getId() ==R.id.btn_SolicitarServicio) {
             validar();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+
+                    "ALONSO_VENTO@OUTLOOK.COM"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Solicitud de servicio");
+            intent.putExtra(Intent.EXTRA_TEXT, "Requiero de sus servicios. Por favor contactarme al celular:");
+            startActivity(intent);
         }
     }
 

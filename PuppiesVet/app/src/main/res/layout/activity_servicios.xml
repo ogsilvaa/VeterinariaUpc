@@ -175,7 +175,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_siguiente"
+                    android:id="@+id/btn_SolicitarServicio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
