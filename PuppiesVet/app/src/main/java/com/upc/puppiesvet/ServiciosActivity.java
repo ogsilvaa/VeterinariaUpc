@@ -41,7 +41,7 @@ public class ServiciosActivity extends AppCompatActivity {
         if (view.getId() ==R.id.btn_SolicitarServicio) {
             validar();
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+
-                    "ALONSO_VENTO@OUTLOOK.COM"));
+                    "U201821455@UPC.EDU.PE"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Solicitud de servicio");
             intent.putExtra(Intent.EXTRA_TEXT, "Requiero de sus servicios. Por favor contactarme al celular:");
             startActivity(intent);
